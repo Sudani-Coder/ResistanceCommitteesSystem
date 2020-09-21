@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}
+    {{ project.Title }}
+{% endblock %}
+{% block content %}
+    <h1>{{ project.Title }}</h1>
+    <ul class="mt-3">
+        <li class="my-3">
+            <p>
+                <strong>Project Name:</strong> {{project.Title}}
+            </p>
+        </li>
+        <li class="my-3">
+            <p>
+                <strong>Project Description:</strong> {{project.Description}}
+            </p>
+        </li>
+        <li class="my-3">
+            <p>
+                <strong>Project Image:</strong>
+                <div>
+                    <img class="img-thumbnail" src="{{ project.image_url }}" alt="{{project.Title}}" title="{{project.Title}}" width="300px" height="300px">
+                </div>
+            </p>
+        </li>
+        <li class="my-3">
+            <p>
+                <strong>Project Complete:</strong> {{project.Complete}}
+            </p>
+        </li>
+        <li class="my-3">
+            <p>
+                <strong>Project Created:</strong> {{project.Created}}
+            </p>
+        </li>
+        <li class="my-3">
+            <p>
+                <strong>Project Area:</strong> {{project.Area}}
+            </p>
+        </li>
+    </ul>
+    <div class="my-2">
+        <a class="btn btn-primary mr-2" href="{% url 'project-update' project.pk %}">Update Project</a>
+        <a class="btn btn-danger ml-2" href="{% url 'project-delete' project.pk %}">Delete Project</a>
+    </div>
+{% endblock %}

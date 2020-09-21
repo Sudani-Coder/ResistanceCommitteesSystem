@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}
+    All Area's
+{% endblock %}
+{% block content %}
+    <h1>Area's List</h1>
+    {% if area_list %}
+        <ul>
+        {% for area in area_list %}
+            <li class="my-3">
+                <a href="{{ area.get_absolute_url }}">{{ area.Area_Name }}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>There are no area's in the database.</p>
+    {% endif %}
+{% endblock %}

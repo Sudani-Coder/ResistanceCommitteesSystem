@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}
+{% endblock %}
+{% block content %}
+
+    <h1>Delete Family</h1>
+
+    <p>Are you sure you want to delete the family: {{ family }}?</p>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input class="btn btn-secondary mr-2" type="submit" value="Yes, delete.">
+    </form>
+
+{% endblock %}

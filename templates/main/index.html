@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}
+    {{ title }}
+{% endblock %}
+{% block content %}
+    <div class="jumbotron m-0 py-4" style="background-color: #eeeeee !important;">
+        <h1 class="display-4">Hello, world!</h1>
+        <p class="lead">Welcome to Resistance Committees System, a website developed by <em>Sudani Coder (Code Byte inc.)</em>!</p>
+        <hr class="my-4">
+        <h2>Dynamic content</h2>
+        <p>The System has the following record counts:</p>
+        <ul>
+            <li><strong>Area's:</strong> {{ num_areas }}</li>
+            <li><strong>Family's:</strong> {{ num_familys }}</li>
+            <li><strong>Project's:</strong>
+                <ul>
+                    <li>All Projects: {{ num_projects }}</li>
+                    <li>Completed Projects: {{ num_projects_completed }}</li>
+                    <li>Not Completed Projects: {{ num_projects_not_completed }}</li>
+                </ul>
+            </li>
+            <li><strong>Task's:</strong>
+                <ul>
+                    <li>All Tasks: {{ num_tasks }}</li>
+                    <li>Completed Tasks: {{ num_tasks_completed }}</li>
+                    <li>Not Completed Tasks: {{ num_tasks_not_completed }}</li>
+                </ul>
+            </li>
+        </ul>
+        <p class="lead">You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
+    </div>
+    <div>
+    </div>
+{% endblock %}
+
+{% block news %}
+    <div class="my-5 py-5 bg-white text-dark">
+        <div class="container">
+            <div class="row">
+                {% for project in projects %}
+                    <div class="col-md">
+                        <div class="card shadow" style="width: 15rem;">
+                            <img class="card-img-top" src="{{ project.image_url }}" alt="{{ project.Title }}" title="{{ project.Title }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ project.Title }}</h5>
+                                <small class="text-muted">{{ project.Created|date:"F d, Y" }}</small>
+                                <p class="card-text">{{ project.Description|slice:50 }}</p>
+                                <a href="{{project.get_absolute_url}}" class="btn btn-primary">اقراء المزيد</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

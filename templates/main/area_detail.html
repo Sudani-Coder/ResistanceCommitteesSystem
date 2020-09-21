@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}
+    {{ area.Area_Name }}
+{% endblock %}
+{% block content %}
+    <h1>{{ area.Area_Name }}</h1>
+    <ul class="mt-3">
+        <li class="my-3">
+            <p>
+                <strong>Area Name:</strong> {{ area.Area_Name }}
+            </p>
+        </li>
+        <li>
+            <p>
+                <strong>Family's:</strong> {{ area_familys }}
+            </p>
+        </li>
+        <li>
+            <p>
+                <strong>Project's:</strong> {{ area_projects }}
+            </p>
+        </li>
+    </ul>
+{% endblock %}

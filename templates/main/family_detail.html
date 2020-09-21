@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}
+    {{ family.Full_Name }}
+{% endblock %}
+{% block content %}
+    <h1>{{ family.Full_Name }}</h1>
+    <ul class="mt-3">
+        <li class="my-3">
+            <p>
+                <strong>ID:</strong> {{family.Id_Number}}
+            </p>
+        </li>
+        <li class="my-3">
+            <p>
+                <strong>ID Type:</strong> {{family.Id_Type}}
+            </p>
+        </li>
+        <li class="my-3">
+            <p>
+                <strong>Full Name:</strong> {{family.Full_Name}}
+            </p>
+        </li>
+        <li class="my-3">
+            <p>
+                <strong>Age:</strong> {{family.Age}}
+            </p>
+        </li>
+        <li class="my-3">
+            <p>
+                <strong>Place Of Birth:</strong> {{family.Place_Of_Birth}}
+            </p>
+        </li>
+        <li class="my-3">
+            <p>
+                <strong>Gender:</strong> {{family.Gender}}
+            </p>
+        </li>
+        <li class="my-3">
+            <p>
+                <strong>Social Status:</strong> {{family.Social_Status}}
+            </p>
+        </li>
+        <li class="my-3">
+            <p>
+                <strong>Education Level:</strong> {{family.Education_Level}}
+            </p>
+        </li>
+        <li class="my-3">
+            <p>
+                <strong>Job Title:</strong> {{family.Job_Title}}
+            </p>
+        </li>
+        <li class="my-3">
+            <p>
+                <strong>Phone Number:</strong> {{family.Phone_Number}}
+            </p>
+        </li>
+        <li class="my-3">
+            <p>
+                <strong>Address:</strong> {{family.Address}}
+            </p>
+        </li>
+        <li class="my-3">
+            <p>
+                <strong>House Number:</strong> {{family.House_Number}}
+            </p>
+        </li>
+        <li class="my-3">
+            <p>
+                <strong>Family Member's Number:</strong> {{family.Family_Members_Number}}
+            </p>
+        </li>
+        <li class="my-3">
+            <p>
+                <strong>Area:</strong> {{family.Area}}
+            </p>
+        </li>
+    </ul>
+    <div class="my-2">
+        <a class="btn btn-primary mr-2" href="{% url 'family-update' family.pk %}">Update Family</a>
+        <a class="btn btn-danger ml-2" href="{% url 'family-delete' family.pk %}">Delete Family</a>
+    </div>
+{% endblock %}
